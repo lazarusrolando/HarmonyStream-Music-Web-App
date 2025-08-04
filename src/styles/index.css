@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+:root {
+  /* Core Colors */
+  --color-background: #121212;
+  /* Deep charcoal */
+  --color-foreground: #FFFFFF;
+  /* Pure white */
+  --color-border: rgba(255, 255, 255, 0.1);
+  /* Light border */
+  --color-input: #1E1E1E;
+  /* Elevated surface */
+  --color-ring: #1DB954;
+  /* Spotify green */
+
+  /* Card Colors */
+  --color-card: #1E1E1E;
+  /* Elevated surface */
+  --color-card-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Popover Colors */
+  --color-popover: #1E1E1E;
+  /* Elevated surface */
+  --color-popover-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Muted Colors */
+  --color-muted: #535353;
+  /* Neutral gray */
+  --color-muted-foreground: #B3B3B3;
+  /* Light gray */
+
+  /* Primary Colors */
+  --color-primary: #1DB954;
+  /* Spotify green */
+  --color-primary-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Secondary Colors */
+  --color-secondary: #535353;
+  /* Neutral gray */
+  --color-secondary-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Destructive Colors */
+  --color-destructive: #F44336;
+  /* Clear red */
+  --color-destructive-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Accent Colors */
+  --color-accent: #FF6B6B;
+  /* Warm coral */
+  --color-accent-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Success Colors */
+  --color-success: #1ED760;
+  /* Bright green */
+  --color-success-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Warning Colors */
+  --color-warning: #FFA726;
+  /* Warm orange */
+  --color-warning-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Error Colors */
+  --color-error: #F44336;
+  /* Clear red */
+  --color-error-foreground: #FFFFFF;
+  /* Pure white */
+
+  /* Layout Z-Index Values */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+  --z-navigation: 1090;
+  --z-player: 1100;
+
+  /* Layout Heights */
+  --height-header: 64px;
+  --height-navigation: 56px;
+  --height-player: 80px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.glassmorphism {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.player-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transition-smooth {
+  transition: all 200ms ease-out;
+}
+
+.transition-modal {
+  transition: all 300ms ease-in-out;
+}
+
+.hover-scale {
+  transition: scale(1.02);
+}
+
+.pulse-playing {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.rotate-loading {
+  animation: spin 1s linear infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.text-clamp {
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+.grid-8 {
+  display: grid;
+  gap: 8px;
+}
+
+.min-touch {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Z-Index Utilities */
+.z-dropdown {
+  z-index: var(--z-dropdown);
+}
+
+.z-sticky {
+  z-index: var(--z-sticky);
+}
+
+.z-fixed {
+  z-index: var(--z-fixed);
+}
+
+.z-modal-backdrop {
+  z-index: var(--z-modal-backdrop);
+}
+
+.z-modal {
+  z-index: var(--z-modal);
+}
+
+.z-popover {
+  z-index: var(--z-popover);
+}
+
+.z-tooltip {
+  z-index: var(--z-tooltip);
+}
+
+.z-toast {
+  z-index: var(--z-toast);
+}
+
+.z-navigation {
+  z-index: var(--z-navigation);
+}
+
+.z-player {
+  z-index: var(--z-player);
+}
+
+/* Layout Height Utilities */
+.h-header {
+  height: var(--height-header);
+}
+
+.h-navigation {
+  height: var(--height-navigation);
+}
+
+.h-player {
+  height: var(--height-player);
+}
+
+/* Layout Spacing Utilities */
+.top-header {
+  top: var(--height-header);
+}
+
+.bottom-player {
+  bottom: var(--height-player);
+}
+
+.pt-header {
+  padding-top: var(--height-header);
+}
+
+.pb-player {
+  padding-bottom: var(--height-player);
+}
+
+/* Custom Animations */
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+/* Custom Slider Styles */
+.slider {
+  background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) var(--value, 0%), var(--color-muted) var(--value, 0%), var(--color-muted) 100%);
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  cursor: pointer;
+  border: 2px solid var(--color-background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  cursor: pointer;
+  border: 2px solid var(--color-background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #121212; /* Deep charcoal */
+    --color-foreground: #FFFFFF; /* Pure white */
+    --color-border: rgba(255, 255, 255, 0.1); /* Light border */
+    --color-input: #1E1E1E; /* Elevated surface */
+    --color-ring: #1DB954; /* Spotify green */
+    
+    /* Card Colors */
+    --color-card: #1E1E1E; /* Elevated surface */
+    --color-card-foreground: #FFFFFF; /* Pure white */
+    
+    /* Popover Colors */
+    --color-popover: #1E1E1E; /* Elevated surface */
+    --color-popover-foreground: #FFFFFF; /* Pure white */
+    
+    /* Muted Colors */
+    --color-muted: #535353; /* Neutral gray */
+    --color-muted-foreground: #B3B3B3; /* Light gray */
+    
+    /* Primary Colors */
+    --color-primary: #1DB954; /* Spotify green */
+    --color-primary-foreground: #FFFFFF; /* Pure white */
+    
+    /* Secondary Colors */
+    --color-secondary: #535353; /* Neutral gray */
+    --color-secondary-foreground: #FFFFFF; /* Pure white */
+    
+    /* Destructive Colors */
+    --color-destructive: #F44336; /* Clear red */
+    --color-destructive-foreground: #FFFFFF; /* Pure white */
+    
+    /* Accent Colors */
+    --color-accent: #FF6B6B; /* Warm coral */
+    --color-accent-foreground: #FFFFFF; /* Pure white */
+    
+    /* Success Colors */
+    --color-success: #1ED760; /* Bright green */
+    --color-success-foreground: #FFFFFF; /* Pure white */
+    
+    /* Warning Colors */
+    --color-warning: #FFA726; /* Warm orange */
+    --color-warning-foreground: #FFFFFF; /* Pure white */
+    
+    /* Error Colors */
+    --color-error: #F44336; /* Clear red */
+    --color-error-foreground: #FFFFFF; /* Pure white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .glassmorphism {
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.08);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .glassmorphism-header {
+    @apply glassmorphism;
+    background: rgba(30, 30, 30, 0.85); /* Slightly darker for header */
+  }
+  
+  .glassmorphism-player {
+    @apply glassmorphism;
+    background: rgba(30, 30, 30, 0.95); /* Slightly darker for player */
+  }
+  
+  .player-shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transition-smooth {
+    transition: all 200ms ease-out;
+  }
+  
+  .transition-modal {
+    transition: all 300ms ease-in-out;
+  }
+  
+  .hover-scale {
+    @apply transition-smooth hover:scale-[1.02];
+  }
+  
+  .pulse-playing {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .rotate-loading {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-clamp {
+    font-size: clamp(14px, 2.5vw, 18px);
+  }
+  
+  .grid-8 {
+    display: grid;
+    gap: 8px;
+  }
+  
+  .min-touch {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
