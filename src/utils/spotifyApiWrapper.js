@@ -4,7 +4,7 @@
 import spotifyService from '../services/spotifyService.js';
 
 // The provided token from the task
-const PROVIDED_TOKEN = 'BQBSXcTCujx8t8M-PQFGfcLv4w4SGUsTMjPevy53K5xB-FxjGUqXvDYIG3FSmdkUWzF75oiGGVLTk34xXcZ2iFA29weMU16xrSOMc334f2FAo3r8gVtmpot5YE9c1H5NUBwwR6Y0PxY6yrWOf-qVBCSyrSTyUz-qs7lqMwwkqK2oQ_WvXPuUR_UmY2hLBF-ZwsGEWKNripGigEM9F3hoOowMTRYB9ERUd1PaZj6MKbpTaryp7JJTlWi52BAx_AJEy9tUabaq9LmMZIhFuKJl5tupNflkFCXnlZ92LNckfxepcNSTiCjvXJGiwKRb';
+const PROVIDED_TOKEN = '';
 
 // The provided fetchWebApi function from the task
 async function fetchWebApi(endpoint, method = 'GET', body = null) {
@@ -100,3 +100,4 @@ const spotifyApiWrapper = new SpotifyApiWrapper();
 // Export both the class and instance
 export { SpotifyApiWrapper };
 export default spotifyApiWrapper;
+
